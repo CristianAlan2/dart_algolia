@@ -1028,10 +1028,11 @@ class AlgoliaQuery {
   ///
   /// Source: [Learn more](https://www.algolia.com/doc/api-reference/api-parameters/paginationLimitedTo/)
   ///
-  @Deprecated('This method is deprecated, not part of query parameters')
+  //@Deprecated('This method is deprecated, not part of query parameters')
   AlgoliaQuery setPaginationLimitedTo(int value) {
     assert(!_parameters.containsKey('paginationLimitedTo'));
-    return this;
+    return _copyWithParameters(<String, dynamic>{'paginationLimitedTo': value});
+    //return this;
   }
 
   ///
